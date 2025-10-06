@@ -18,20 +18,17 @@ export default function App() {
   }
 
   function rollDice() {
-    setDice(generateAllNewDice())
+    setDice(oldDice => oldDice.map(die => {
+      return die.isHeld === false ? { ...die, value: Math.ceil(Math.random() * 6) } : die;
+    }))
   }
 
-  /* 
-  * If the id of item is the same as the id passed to the function,
-  * it will return all the properties of item, except isHeld that will be the opposite.
-  * If the ids are not the same, it will return the item unchanged
-  */
-
   function hold(id) {
-    console.log(id)
-    setDice(prevDice => prevDice.map((item) => {
-      return item.id === id ? { ...item, isHeld: !item.isHeld } : item;
-    }));
+    setDice(oldDice => oldDice.map(die =>
+      die.id === id ?
+        { ...die, isHeld: !die.isHeld } :
+        die
+    ))
   }
 
   const diceElements = dice.map(dieObj => (
