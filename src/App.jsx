@@ -11,9 +11,7 @@ export default function App() {
       .map(() => Math.ceil(Math.random() * 6))
   }
 
-  const diceElements = dice.map(num => {
-    return <Die value={num} />
-  })
+  const diceElements = dice.map(num => <Die value={num} />)
 
 
   return (
