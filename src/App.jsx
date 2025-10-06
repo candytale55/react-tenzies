@@ -2,6 +2,15 @@ import Die from "./components/Die";
 
 
 export default function App() {
+
+  const generateAllNewDice = () => {
+    const newDice = [];
+    for (let i = 0; i < 10; i++) {
+      newDice.push(Math.ceil(Math.random() * 6));
+    }
+    return newDice;
+  }
+  console.log(generateAllNewDice());
   return (
     <main>
       <div className="dice-container">
