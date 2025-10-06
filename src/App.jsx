@@ -14,7 +14,7 @@ export default function App() {
       .map(() => ({
         id: nanoid(), 
         value: Math.ceil(Math.random() * 6),
-        isHeld: false
+        isHeld: true
       }))
   }
 
