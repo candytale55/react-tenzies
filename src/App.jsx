@@ -9,23 +9,24 @@ export default function App() {
   function generateAllNewDice() {
     return new Array(10)
       .fill(0)
-      .map(() => Math.ceil(Math.random() * 6))
+      .map(() => ({
+        value: Math.ceil(Math.random() * 6),
+        isHeld: false
+      }))
   }
 
   function rollDice() {
     setDice(generateAllNewDice())
   }
 
-  const diceElements = dice.map(num => <Die value={num} />)
+  const diceElements = dice.map(num => <Die value={num.value} isHeld={num.isHeld} />)
 
   return (
     <main>
       <div className="dice-container">
         {diceElements}
       </div>
-
       <button className="roll-dice" onClick={rollDice}>Roll</button>
-
     </main>
   )
 }
