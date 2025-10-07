@@ -41,7 +41,7 @@ Check out the live demo 👉 [React Tenzies](https://ct55-react-tenzies.netlify.
 
 | Game Start                         | Selected Dice                         | Game Won                         |
 | ---------------------------------- | ------------------------------------- | -------------------------------- |
-| ![Game Start](./shots/scsh-01.png) | ![Selected Dice](./shots/scsh-02.png) | ![Game Won](./shots/scsh-03.png) |
+| ![Game Start](/src/assets/shots/scsh-01.png) | ![Selected Dice](./src/assets/shots/scsh-02.png) | ![Game Won](./src/assets/shots/scsh-03.png) |
 
 ---
 
@@ -50,21 +50,23 @@ Check out the live demo 👉 [React Tenzies](https://ct55-react-tenzies.netlify.
 ```
 tenzies-game
 │── index.html
-│── src/
-│   ├── main.jsx
-│   ├── App.jsx
-│   ├── index.css
-│   └── components/
-│       └── Die.jsx
-│── package.json
-│── README.md
-│── img/
-│    ├── screenshot-game.png
-│    └── screenshot-win.png
-│── shots/
-│    ├── scsh-01.png
-│    ├── scsh-02.png
-│    ├── scsh-03.png
+└── src/
+    │── main.jsx
+    │── index.css
+    │── App.jsx
+    │
+    ├── components/
+    │   └── Die.jsx
+    │
+    └── assets/
+        ├── docs/
+        │   ├── future-todos.md
+        │   └── pseudocode.md
+        │
+        └── shots/
+            ├── scsh-01.png
+            ├── scsh-02.png
+            └── scsh-03.png
 ```
 
 ---
@@ -74,25 +76,8 @@ tenzies-game
 This project was bootstrapped with **Vite + React**.
 It includes a minimal configuration with Hot Module Replacement (HMR) and ESLint.
 
-### Available Vite Plugins
 
-Two official React plugins are supported for HMR and fast refresh:
-
-* [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) — uses **Babel**
-* [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) — uses **SWC**, a faster alternative
-
-### ESLint Configuration
-
-Vite includes a base ESLint setup.
-For production-grade apps, it’s recommended to:
-
-* Use **TypeScript** for stronger typing.
-* Enable **type-aware lint rules** via [`typescript-eslint`](https://typescript-eslint.io).
-  See the [Vite React + TypeScript template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for reference.
-
----
-
-## Future Improvements (TODO)
+## Future Improvements (TODOs)
 
 ### Code Quality
 
