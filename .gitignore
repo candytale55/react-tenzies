@@ -23,9 +23,3 @@ dist-ssr
 *.sln
 *.sw?
 
-# Files
-readme-draft.md
-chatgpt-roast.md
-future-todos.md
-pseudocode.md
-
