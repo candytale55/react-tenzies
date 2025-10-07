@@ -1,139 +1,143 @@
-# 🎲 React Tenzies
+# 🎲 React Tenzies — A Mini Game for Practicing React State and Accessibility
 
 ## Description
 
-A self-contained React mini-game built to practice React fundamentals, state management, accessibility, and responsive design — packaged into a clean, production-ready example app.
-
-The goal is simple: roll until all dice show the same number. Click a die to **hold** its value between rolls and continue until every die matches.
-
----
-
-## Technologies
-
-* **React (Vite)** – component-based architecture, fast HMR
-* **JavaScript (ES6+)** – core logic and interactivity
-* **CSS3 (Grid & Flexbox)** – responsive, mobile-first layout
-* **ESLint (Vite default)** – linting and code quality rules
+A fast, responsive mini-game built with React to explore component state, interactivity, and accessibility best practices.
+Roll until all dice match — click dice to **hold** their value between rolls and keep going until every die shows the same number.
 
 ---
 
-## Libraries & Tools
+## Tech Stack
 
-* **nanoid** – generates unique IDs for each die
-* **react-confetti** – adds celebratory confetti when the game is won
-* **react-use** – provides window size detection for responsive confetti behavior
+**Core**
+
+* React (Vite)
+* JavaScript (ES6+)
+* CSS3 (Grid & Flexbox)
+
+**Tooling & Libraries**
+
+* ESLint
+* nanoid
+* react-confetti
+* react-use
 
 ---
 
 ## Live Demo
 
-Check out the live demo 👉 [React Tenzies](https://ct55-react-tenzies.netlify.app/) hosted on Netlify.
-
----
-
-## Status
-
-*Completed*: **October 2025**
-
----
-
-## Screenshots
-
-| Game Start                         | Selected Dice                         | Game Won                         |
-| ---------------------------------- | ------------------------------------- | -------------------------------- |
-| ![Game Start](/src/assets/shots/scsh-01.png) | ![Selected Dice](./src/assets/shots/scsh-02.png) | ![Game Won](./src/assets/shots/scsh-03.png) |
+[**Play React Tenzies on Netlify**](https://ct55-react-tenzies.netlify.app/)
 
 ---
 
 ## Project Structure
 
 ```
-tenzies-game
-│── index.html
-└── src/
-    │── main.jsx
-    │── index.css
-    │── App.jsx
-    │
-    ├── components/
-    │   └── Die.jsx
-    │
-    └── assets/
-        ├── docs/
-        │   ├── future-todos.md
-        │   └── pseudocode.md
-        │
-        └── shots/
-            ├── scsh-01.png
-            ├── scsh-02.png
-            └── scsh-03.png
+src/
+├── components/
+│   └── Die.jsx
+├── assets/
+│   ├── docs/
+│   │   ├── future-todos.md
+│   │   └── pseudocode.md
+│   └── shots/
+│       ├── scsh-01.png
+│       ├── scsh-02.png
+│       └── scsh-03.png
+├── App.jsx
+├── main.jsx
+└── index.css
 ```
 
 ---
 
-## Useful Setup Information
+## Screenshots
 
-This project was bootstrapped with **Vite + React**.
-It includes a minimal configuration with Hot Module Replacement (HMR) and ESLint.
-
-
-## Future Improvements (TODOs)
-
-### Code Quality
-
-* Refactor logic into a `useTenziesGame` custom hook to separate UI from state.
-* Optimize win condition checks — compute `allHeld` and `allSameValue` once.
-* Abstract dice creation into a `generateDie()` helper.
-* Add Jest/Vitest unit tests for dice and win condition logic.
-
-### Accessibility
-
-* Add visible focus outlines (`:focus-visible`).
-* Add `role="status"` to live region for screen readers.
-
-### UX / UI
-
-* Move inline styles to CSS classes (e.g., `.die.held`).
-* Add roll animations with CSS or Framer Motion.
-* Include settings for dark mode or sound effects.
-* Display roll count and timer for performance tracking.
-
-### State & Persistence
-
-* Store best scores and roll count in `localStorage`.
-* Persist ongoing game state between sessions.
-
-### Extra Credit Ideas
-
-1. Replace numbers with real dice pips.
-2. Add leaderboards or challenge modes.
+| Game Start                                    | Selected Dice                                    | Game Won                                    |
+| --------------------------------------------- | ------------------------------------------------ | ------------------------------------------- |
+| ![Game Start](./src/assets/shots/scsh-01.png) | ![Selected Dice](./src/assets/shots/scsh-02.png) | ![Game Won](./src/assets/shots/scsh-03.png) |
 
 ---
 
-## Notes to Future Self
+## Learning Outcomes
 
-* Check [future-todos](./docs/future-todos.md) for additional ideas.
-* Keep all dice state in the parent (`App`) to maintain a single source of truth.
-* Avoid derived or duplicated state in child components.
-* Use **refs** for DOM focus management without re-rendering.
+Through this project I practiced:
 
----
-
-### Why Refs Are Used
-
-Refs provide a direct handle to DOM elements **without triggering re-renders**.
-They’re ideal for managing focus (e.g., focusing “New Game” after a win) and for integrating libraries that require direct DOM access.
-This preserves React’s declarative model while maintaining precise control.
+* Managing component state and derived logic in React
+* Handling accessibility with `aria-pressed`, `aria-live`, and keyboard focus
+* Lazy state initialization and conditional rendering
+* Responsive layouts with CSS Grid and Flexbox
+* Integrating third-party React libraries for UX polish
 
 ---
 
-## References and Useful Links
+## Future Improvements
 
-* From Scrimba course [*Learn React*](https://scrimba.com/learn-react-c0e), Capstone Project #1 – *Tenzies*
-* Related YouTube tutorial: [Learn React – Tenzies Game](https://youtu.be/x4rFhThSX04?si=wJI7yJ1cDVi8D7O5)
-* Libraries:
+Detailed refactor ideas, accessibility updates, and planned features are documented here:
+➡️ [`future-todos.md`](./src/assets/docs/future-todos.md)
 
-  * [nanoid](https://www.npmjs.com/package/nanoid) — unique IDs
-  * [react-confetti](https://github.com/alampros/react-confetti#readme) — confetti animation
-  * [react-use](https://github.com/streamich/react-use) — hooks utilities
+These include:
+
+* Extracting game logic into a custom hook
+* Adding roll animations and dark mode
+* Persisting scores and game state
+
+---
+
+## ⚙️ Getting Started
+
+1. **Clone the repository**
+
+   ```bash
+   git clone https://github.com/yourusername/react-tenzies.git
+   cd react-tenzies
+   ```
+2. **Install dependencies**
+
+   ```bash
+   npm install
+   ```
+3. **Run the app locally**
+
+   ```bash
+   npm run dev
+   ```
+
+---
+
+## Notes for Future Development
+
+> **Note:**
+> Keep all dice state in the parent (`App`) to maintain a single source of truth.
+> Avoid derived or duplicated state in child components.
+> Use **refs** for DOM focus management without triggering re-renders.
+> See [future-todos.md](./src/assets/docs/future-todos.md) for more technical notes.
+
+
+---
+
+## References
+
+* Scrimba Course — [*Learn React*](https://scrimba.com/learn-react-c0e)
+* YouTube Tutorial — [Tenzies Game Walkthrough](https://youtu.be/x4rFhThSX04?si=wJI7yJ1cDVi8D7O5)
+* Dependencies — [nanoid](https://www.npmjs.com/package/nanoid), [react-confetti](https://github.com/alampros/react-confetti), [react-use](https://github.com/streamich/react-use)
+
+---
+
+## 📅 Project Status
+
+**Completed:** October 2025
+
+**Status:** Functional and stable — future improvements planned
+
+---
+
+### Summary
+
+This project demonstrates React fundamentals, accessibility awareness, and thoughtful UI design — packaged into a clean, self-contained mini-game.
+It’s designed as both a **learning project** and a **showcase of professional development practices**.
+
+---
+
+
 
